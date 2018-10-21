@@ -192,15 +192,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4546788534167418, guid: a126d74feb26c93498bc9a431ad33712, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4546788534167418, guid: a126d74feb26c93498bc9a431ad33712, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4546788534167418, guid: a126d74feb26c93498bc9a431ad33712, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4546788534167418, guid: a126d74feb26c93498bc9a431ad33712, type: 2}
       propertyPath: m_LocalRotation.w
@@ -238,11 +238,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4817826215610606, guid: 45a1b037624e24248ba99f92a63f5321, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 4817826215610606, guid: 45a1b037624e24248ba99f92a63f5321, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.34
       objectReference: {fileID: 0}
     - target: {fileID: 4817826215610606, guid: 45a1b037624e24248ba99f92a63f5321, type: 2}
       propertyPath: m_LocalPosition.z
@@ -321,6 +321,11 @@ GameObject:
   - component: {fileID: 619297302}
   - component: {fileID: 619297304}
   - component: {fileID: 619297301}
+  - component: {fileID: 619297305}
+  - component: {fileID: 619297308}
+  - component: {fileID: 619297307}
+  - component: {fileID: 619297306}
+  - component: {fileID: 619297309}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -343,10 +348,10 @@ MonoBehaviour:
   right_front_on: 1
   sensor_on: 0
   sensor_detect: 0
-  left_front_w: -10
+  left_front_w: 10
   right_front_w: 10
   radius: 1
-  terrain_alpha: 0
+  terrain_alpha: 1
 --- !u!212 &619297302
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -402,7 +407,7 @@ Transform:
   m_PrefabInternal: {fileID: 332994204}
   m_GameObject: {fileID: 619297300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.52, y: -3.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 802637968}
@@ -429,6 +434,91 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!255 &619297305
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619297300}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1827432843}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 3, y: -1.7500001}
+  m_DampingRatio: 0
+  m_Frequency: 0
+--- !u!255 &619297306
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619297300}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1663110254}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -3, y: 3.2499998}
+  m_DampingRatio: 0
+  m_Frequency: 0
+--- !u!255 &619297307
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619297300}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1724105569}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 3, y: 3.2499998}
+  m_DampingRatio: 0
+  m_Frequency: 0
+--- !u!255 &619297308
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619297300}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 2109579056}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -3, y: -1.7500001}
+  m_DampingRatio: 0
+  m_Frequency: 0
+--- !u!255 &619297309
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619297300}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1945134144}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: -1.1629999}
+  m_DampingRatio: 0
+  m_Frequency: 0
 --- !u!1001 &659967215
 Prefab:
   m_ObjectHideFlags: 0
@@ -640,7 +730,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 20.406082
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -715,6 +805,21 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2177d0d879eeb74eb45988aa9d65fab, type: 2}
   m_IsPrefabAsset: 0
+--- !u!50 &1663110254 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 50036040212932296, guid: a126d74feb26c93498bc9a431ad33712,
+    type: 2}
+  m_PrefabInternal: {fileID: 1211767108}
+--- !u!50 &1724105569 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 50036040212932296, guid: a126d74feb26c93498bc9a431ad33712,
+    type: 2}
+  m_PrefabInternal: {fileID: 659967215}
+--- !u!50 &1827432843 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 50036040212932296, guid: a126d74feb26c93498bc9a431ad33712,
+    type: 2}
+  m_PrefabInternal: {fileID: 269478463}
 --- !u!1 &1945134142 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1049223596272478, guid: f2177d0d879eeb74eb45988aa9d65fab,
@@ -745,3 +850,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4546788534167418, guid: a126d74feb26c93498bc9a431ad33712,
     type: 2}
   m_PrefabInternal: {fileID: 659967215}
+--- !u!50 &2109579056 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 50036040212932296, guid: a126d74feb26c93498bc9a431ad33712,
+    type: 2}
+  m_PrefabInternal: {fileID: 121203208}
