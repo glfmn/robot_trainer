@@ -73,26 +73,28 @@ public class Player_Controller : MonoBehaviour
     // Physics code
     private void FixedUpdate()
     {
-
         float width = robot.transform.localScale.x;
 
-        // sets angular vel. of wheel to 0 if wheel is off
+        // Calculate linear velocities from angular
+        float left_v = left_w * radius;
+        float right_v = right_w * radius;
+
+        // Set linear velocites to zero if the motors have been turned off
         if (left_on == false)
         {
-            left_w = 0;
+            left_v = 0;
         }
-
         if (right_on == false)
         {
-            right_w = 0;
+            right_v = 0;
         }
 
         // Use ideal physical model for simple skid-steered robot to calculate
         // change in rotation and current velocity
-        float linear_velocity = (radius * right_w) / 2 + (radius * left_w) / 2;
+        float linear_velocity = right_v/2 + left_v/2;
         float angular_velocity
-            = (-left_w * radius) / (terrain_alpha * width)
-            + (right_w * radius) / (terrain_alpha * width);
+            = -left_v / (terrain_alpha*width)
+            + right_v / (terrain_alpha*width);
 
         // Apply physics to local transform after rotation according to
         // calculation to ensure linear velocity is in the same direction as
