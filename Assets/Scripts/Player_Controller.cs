@@ -1,11 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
+using timer = Countdown;
 
 public class Player_Controller : MonoBehaviour
 {
-
     public bool left_on;          // turns on/off left wheel
     public bool right_on;         // turns on/off right wheel
 
@@ -23,52 +24,20 @@ public class Player_Controller : MonoBehaviour
     private float linear_velocity;      // stores a variable for linear velocity of the robot
 
     private AudioSource death;          // sound plays when robot dies
-    private float restartTimer;         // timer counting down to respawn
-    private float restartDelay = 5;     // time between game ending and restarting
-
 
     private Rigidbody2D robot;          // refers to the entire robot
 
-    // Use this for initialization
+    private Countdown timer;
+
     void Start()
     {
 
         robot = GetComponent<Rigidbody2D>();
         death = GetComponent<AudioSource>();
         GetComponent<AudioSource>().playOnAwake = false;
-
         gameOverPanel.SetActive(false);
-
     }
 
-
-    // obstacle collision logi
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-
-        // When the player collides with an obstacle, restart the scene after
-        // playing a death sound.
-        if (other.collider.tag == "Obstacle")
-        {
-            Debug.Log("hit something");
-
-            gameOverPanel.SetActive(true);
-
-            // plays the sound of robot death
-            death.Play();
-
-            // Starts the countdown to restart ..
-            restartTimer += Time.deltaTime;
-
-            // .. when countdown reaches restart delay time ..
-            if (restartTimer >= restartDelay)
-            {
-                // .. level reloads.
-                SceneManager.LoadScene("scene0");
-            }
-
-        }
-    }
 
     // Physics code
     private void FixedUpdate()
@@ -103,8 +72,9 @@ public class Player_Controller : MonoBehaviour
         robot.velocity = this.transform.up * linear_velocity;
     }
 
-    // Update is called once per frame
-    void Update () {
+    void Update ()
+    {
 
-	}
+
+    }
 }
