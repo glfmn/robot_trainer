@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Player_Controller : MonoBehaviour
@@ -25,30 +26,26 @@ public class Player_Controller : MonoBehaviour
     public float terrain_alpha;         // terrain physics
 
     public GameObject gameOverPanel;    // shows a Game Over screen 
-   
+
     private float linear_velocity;      // stores a variable for linear velocity of the robot 
 
     private AudioSource death;          // sound plays when robot dies
-    private float restartTimer;         // timer counting down to respawn
-    private float restartDelay = 5;     // time between game ending and restarting 
-
 
     private Rigidbody2D robot;          // refers to the entire robot
 
-    // Use this for initialization
+
     void Start()
     {
 
         robot = GetComponent<Rigidbody2D>();
         death = GetComponent<AudioSource>();
         GetComponent<AudioSource>().playOnAwake = false;
-
         gameOverPanel.SetActive(false); 
 
     }
 
 
-    // obstacle collision logic
+    /* Obstacle Collision Logic */
     private void OnCollisionEnter2D(Collision2D other)
     {
 
@@ -61,20 +58,10 @@ public class Player_Controller : MonoBehaviour
             // plays the sound of robot death 
             death.Play();
 
-            // Starts the countdown to restart ..  
-            restartTimer += Time.deltaTime; 
-
-            // .. when countdown reaches restart delay time .. 
-            if (restartTimer >= restartDelay)
-            {
-                // .. level reloads. 
-                SceneManager.LoadScene("scene0");
-            }
-       
         }
     }
 
-    // Physics code
+    /* Physics code */
     private void FixedUpdate()
     {
 
@@ -119,8 +106,9 @@ public class Player_Controller : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+    void Update () 
+    {
+
+
+    }
 }
