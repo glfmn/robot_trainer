@@ -332,14 +332,6 @@ Prefab:
       objectReference: {fileID: 439944338}
     - target: {fileID: 114751991516059516, guid: 7ad4747ff893d4c8ea1f4a5a1670569f,
         type: 2}
-      propertyPath: right_front_w
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114751991516059516, guid: 7ad4747ff893d4c8ea1f4a5a1670569f,
-        type: 2}
-      propertyPath: left_front_w
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114751991516059516, guid: 7ad4747ff893d4c8ea1f4a5a1670569f,
         type: 2}
       propertyPath: radius
@@ -350,6 +342,21 @@ Prefab:
       propertyPath: timer
       value: 
       objectReference: {fileID: 619297307}
+    - target: {fileID: 114751991516059516, guid: 7ad4747ff893d4c8ea1f4a5a1670569f,
+        type: 2}
+      propertyPath: terrain_alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114751991516059516, guid: 7ad4747ff893d4c8ea1f4a5a1670569f,
+        type: 2}
+      propertyPath: left_w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114751991516059516, guid: 7ad4747ff893d4c8ea1f4a5a1670569f,
+        type: 2}
+      propertyPath: right_w
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50355754040812032, guid: 7ad4747ff893d4c8ea1f4a5a1670569f, type: 2}
     - {fileID: 50773798275025368, guid: 7ad4747ff893d4c8ea1f4a5a1670569f, type: 2}

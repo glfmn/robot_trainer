@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,21 +7,14 @@ using timer = Countdown;
 
 public class Player_Controller : MonoBehaviour
 {
+    public bool left_on;          // turns on/off left wheel
+    public bool right_on;         // turns on/off right wheel
 
-    public bool left_front_on;          // turns on/off left FRONT wheel
-    public bool right_front_on;         // turns on/off right FRONT wheel
-
-    // public bool left_back_on;        // turning on/off left BACK wheel
-    // public bool right_back_on;       // turning on/off right BACK wheel
+    public float left_w;          // FRONT left wheel's angular velocity
+    public float right_w;         // FRONT right wheel's angular velocity
 
     public bool sensor_on;              // turns on/off sensor
     public bool sensor_detect;          // whether the sensor detects an object (yes/no)
-
-    public float left_front_w;          // FRONT left wheel's angular velocity
-    public float right_front_w;         // FRONT right wheel's angular velocity
-
-    // public float left_back_w;        // BACK left wheel's angular velocity
-    // public float right_back_w;       // BACK right wheel's angular velocity
 
     public float radius;                // wheel radius
     public float terrain_alpha;         // terrain physics
@@ -43,54 +36,40 @@ public class Player_Controller : MonoBehaviour
         death = GetComponent<AudioSource>();
         GetComponent<AudioSource>().playOnAwake = false;
         gameOverPanel.SetActive(false);
-
-
     }
 
 
-    /* Physics code */
+    // Physics code
     private void FixedUpdate()
     {
-
         float width = robot.transform.localScale.x;
 
-        // sets angular vel. of wheel to 0 if wheel is off
-        if (left_front_on == false)
+        // Calculate linear velocities from angular
+        float left_v = left_w * radius;
+        float right_v = right_w * radius;
+
+        // Set linear velocites to zero if the motors have been turned off
+        if (left_on == false)
         {
-            left_front_w = 0;
+            left_v = 0;
+        }
+        if (right_on == false)
+        {
+            right_v = 0;
         }
 
-        if (right_front_on == false)
-        {
-            right_front_w = 0;
-        }
+        // Use ideal physical model for simple skid-steered robot to calculate
+        // change in rotation and current velocity
+        float linear_velocity = right_v/2 + left_v/2;
+        float angular_velocity
+            = -left_v / (terrain_alpha*width)
+            + right_v / (terrain_alpha*width);
 
-       /* if (left_back_on == false)
-        {
-            left_back_w = 0;
-        }
-
-        if (right_back_on == false)
-        {
-            right_back_w = 0;
-        } */
-
-
-        Vector2 movement = new Vector2(
-            (radius * right_front_w) / 2 + (radius * left_front_w) / 2,
-            (-left_front_w * radius) / (terrain_alpha * width) + (right_front_w * radius) / (terrain_alpha * width)
-         );
-
-
-        // player moves in direction up at calculated linear velocity
-        // robot.MovePosition(robot.position + Vector2.up * movement.x);
-
-        robot.velocity = Vector2.up * movement.x;
-
-        // robot.Add
-        robot.MoveRotation(robot.rotation + movement.y * Time.fixedDeltaTime);
-
-
+        // Apply physics to local transform after rotation according to
+        // calculation to ensure linear velocity is in the same direction as
+        // the robot's local (apparent) "up," or forward, direction.
+        transform.Rotate(0, 0, angular_velocity * Time.fixedDeltaTime);
+        robot.velocity = this.transform.up * linear_velocity;
     }
 
     void Update ()
