@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
-using timer = Countdown; 
+using timer = Countdown;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -26,9 +26,9 @@ public class Player_Controller : MonoBehaviour
     public float radius;                // wheel radius
     public float terrain_alpha;         // terrain physics
 
-    public GameObject gameOverPanel;    // shows a Game Over screen 
+    public GameObject gameOverPanel;    // shows a Game Over screen
 
-    private float linear_velocity;      // stores a variable for linear velocity of the robot 
+    private float linear_velocity;      // stores a variable for linear velocity of the robot
 
     private AudioSource death;          // sound plays when robot dies
 
@@ -43,7 +43,7 @@ public class Player_Controller : MonoBehaviour
         death = GetComponent<AudioSource>();
         GetComponent<AudioSource>().playOnAwake = false;
         gameOverPanel.SetActive(false);
-     
+
 
     }
 
@@ -57,7 +57,7 @@ public class Player_Controller : MonoBehaviour
         // sets angular vel. of wheel to 0 if wheel is off
         if (left_front_on == false)
         {
-            left_front_w = 0; 
+            left_front_w = 0;
         }
 
         if (right_front_on == false)
@@ -67,17 +67,17 @@ public class Player_Controller : MonoBehaviour
 
        /* if (left_back_on == false)
         {
-            left_back_w = 0; 
+            left_back_w = 0;
         }
 
         if (right_back_on == false)
         {
-            right_back_w = 0; 
+            right_back_w = 0;
         } */
 
 
         Vector2 movement = new Vector2(
-            (radius * right_front_w) / 2 + (radius * left_front_w) / 2, 
+            (radius * right_front_w) / 2 + (radius * left_front_w) / 2,
             (-left_front_w * radius) / (terrain_alpha * width) + (right_front_w * radius) / (terrain_alpha * width)
          );
 
@@ -85,15 +85,15 @@ public class Player_Controller : MonoBehaviour
         // player moves in direction up at calculated linear velocity
         // robot.MovePosition(robot.position + Vector2.up * movement.x);
 
-        robot.velocity = Vector2.up * movement.x; 
+        robot.velocity = Vector2.up * movement.x;
 
         // robot.Add
-        robot.MoveRotation(robot.rotation + movement.y * Time.fixedDeltaTime); 
+        robot.MoveRotation(robot.rotation + movement.y * Time.fixedDeltaTime);
 
 
     }
 
-    void Update () 
+    void Update ()
     {
 
 

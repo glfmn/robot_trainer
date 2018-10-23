@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -11,7 +11,7 @@ public class Countdown : MonoBehaviour
     public Text countdown;              // Countdown timer text
     public bool TimerOn;                // Turns countdown timer on/off
 
-    public GameObject gameOverPanel;    // shows a Game Over screen 
+    public GameObject gameOverPanel;    // shows a Game Over screen
     private AudioSource death;          // sound plays when robot dies
 
     private float timeLeft = 6.0f;      // Seconds until game restarts
@@ -33,8 +33,8 @@ public class Countdown : MonoBehaviour
         if (TimerOn == true)
         {
             timeLeft -= Time.deltaTime;
-            seconds = (int)timeLeft % 60; 
-            countdown.text = ("" + seconds); 
+            seconds = (int)timeLeft % 60;
+            countdown.text = ("" + seconds);
             if (timeLeft < 0)
             {
                 TimerOn = false;
@@ -46,7 +46,7 @@ public class Countdown : MonoBehaviour
     /* when the robot hits anything, it dies */
     void OnCollisionEnter2D(Collision2D other)
     {
-        /* robot hits obstacle */ 
+        /* robot hits obstacle */
         if (other.collider.tag == "Obstacle")
         {
             Debug.Log("hit something");
@@ -57,10 +57,9 @@ public class Countdown : MonoBehaviour
             /* plays the sound of robot death */
             death.Play();
 
-            /* starts countdown timer */ 
+            /* starts countdown timer */
             TimerOn = true;
 
         }
     }
 }
-
