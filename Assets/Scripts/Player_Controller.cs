@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
+using timer = Countdown; 
 
 public class Player_Controller : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class Player_Controller : MonoBehaviour
 
     private Rigidbody2D robot;          // refers to the entire robot
 
+    private Countdown timer;
 
     void Start()
     {
@@ -40,26 +42,11 @@ public class Player_Controller : MonoBehaviour
         robot = GetComponent<Rigidbody2D>();
         death = GetComponent<AudioSource>();
         GetComponent<AudioSource>().playOnAwake = false;
-        gameOverPanel.SetActive(false); 
+        gameOverPanel.SetActive(false);
+     
 
     }
 
-
-    /* Obstacle Collision Logic */
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-
-        if (other.collider.tag == "Obstacle")
-        {
-            Debug.Log("hit something");
-
-            gameOverPanel.SetActive(true);
-
-            // plays the sound of robot death 
-            death.Play();
-
-        }
-    }
 
     /* Physics code */
     private void FixedUpdate()

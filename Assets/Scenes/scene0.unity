@@ -325,6 +325,31 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114751991516059516, guid: 7ad4747ff893d4c8ea1f4a5a1670569f,
+        type: 2}
+      propertyPath: countdown
+      value: 
+      objectReference: {fileID: 439944338}
+    - target: {fileID: 114751991516059516, guid: 7ad4747ff893d4c8ea1f4a5a1670569f,
+        type: 2}
+      propertyPath: right_front_w
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114751991516059516, guid: 7ad4747ff893d4c8ea1f4a5a1670569f,
+        type: 2}
+      propertyPath: left_front_w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114751991516059516, guid: 7ad4747ff893d4c8ea1f4a5a1670569f,
+        type: 2}
+      propertyPath: radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114751991516059516, guid: 7ad4747ff893d4c8ea1f4a5a1670569f,
+        type: 2}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 619297307}
     m_RemovedComponents:
     - {fileID: 50355754040812032, guid: 7ad4747ff893d4c8ea1f4a5a1670569f, type: 2}
     - {fileID: 50773798275025368, guid: 7ad4747ff893d4c8ea1f4a5a1670569f, type: 2}
@@ -566,7 +591,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2f512a0fe2092445ab09284164938062, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9b5a102976ace4a00ba4b91d10ddf557, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -652,6 +677,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &619297307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619297300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923eebb7ddd884b6c9066066da2086f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdown: {fileID: 439944338}
+  TimerOn: 0
+  gameOverPanel: {fileID: 532635199}
+  timeLeft: 10
 --- !u!1001 &642589890
 Prefab:
   m_ObjectHideFlags: 0
