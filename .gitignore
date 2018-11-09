@@ -1,3 +1,6 @@
+# Ignore personal configuration for unity merge
+.gitconfig
+
 # Unity folders for generated assets and entities
 [Ll]ibrary/
 [Tt]emp/
