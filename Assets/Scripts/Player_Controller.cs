@@ -10,8 +10,10 @@ public class Player_Controller : MonoBehaviour
     public bool left_on;          // turns on/off left wheel
     public bool right_on;         // turns on/off right wheel
 
-    public float left_w;          // FRONT left wheel's angular velocity
-    public float right_w;         // FRONT right wheel's angular velocity
+    public KeyboardInput inputManager;
+
+    private float left_w;          // FRONT left wheel's angular velocity
+    private float right_w;         // FRONT right wheel's angular velocity
 
     public bool sensor_on;              // turns on/off sensor
     public bool sensor_detect;          // whether the sensor detects an object (yes/no)
@@ -31,11 +33,11 @@ public class Player_Controller : MonoBehaviour
 
     void Start()
     {
-
         robot = GetComponent<Rigidbody2D>();
         death = GetComponent<AudioSource>();
         GetComponent<AudioSource>().playOnAwake = false;
         gameOverPanel.SetActive(false);
+
     }
 
 
@@ -43,6 +45,11 @@ public class Player_Controller : MonoBehaviour
     private void FixedUpdate()
     {
         float width = robot.transform.localScale.x;
+
+        Vector2 input = inputManager.MoveAction();
+
+        left_w += input.x;
+        right_w += input.y; 
 
         // Calculate linear velocities from angular
         float left_v = left_w * radius;
