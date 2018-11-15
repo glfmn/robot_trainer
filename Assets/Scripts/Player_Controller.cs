@@ -37,7 +37,6 @@ public class Player_Controller : MonoBehaviour
         death = GetComponent<AudioSource>();
         GetComponent<AudioSource>().playOnAwake = false;
         gameOverPanel.SetActive(false);
-
     }
 
 
@@ -49,28 +48,25 @@ public class Player_Controller : MonoBehaviour
         Vector2 input = inputManager.MoveAction();
 
         left_w += input.x;
-        right_w += input.y; 
+        right_w += input.y;
 
         // Calculate linear velocities from angular
         float left_v = left_w * radius;
         float right_v = right_w * radius;
 
         // Set linear velocites to zero if the motors have been turned off
-        if (left_on == false)
-        {
+        if (!left_on) {
             left_v = 0;
         }
-        if (right_on == false)
-        {
+        if (!right_on) {
             right_v = 0;
         }
 
         // Use ideal physical model for simple skid-steered robot to calculate
         // change in rotation and current velocity
-        float linear_velocity = right_v/2 + left_v/2;
-        float angular_velocity
-            = -left_v / (terrain_alpha*width)
-            + right_v / (terrain_alpha*width);
+        float linear_velocity = (right_v + left_v)/2;
+        float terrain_factor = (terrain_alpha*width);
+        float angular_velocity = (-left_v + right_v)/terrain_factor;
 
         // Apply physics to local transform after rotation according to
         // calculation to ensure linear velocity is in the same direction as
