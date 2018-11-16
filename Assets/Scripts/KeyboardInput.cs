@@ -19,22 +19,20 @@ public class KeyboardInput : MonoBehaviour, IInputManager {
 
         float x = 0;
         if (Input.GetKey("w")) {
-          x += 2;
+          x += 1;
         }
 
         if (Input.GetKey("s")) {
-          x -= 2;
+          x -= 1;
         }
-
 
         float y = 0;
         if (Input.GetKey("up")) {
-          y += 2;
+          y += 1;
         }
         if (Input.GetKey("down")) {
-          y -= 2;
+          y -= 1;
         }
-
 
         return new Vector2(x, y);
 
