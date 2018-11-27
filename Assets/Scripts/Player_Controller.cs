@@ -10,7 +10,7 @@ public class Player_Controller : MonoBehaviour
     public bool left_on;          // turns on/off left wheel
     public bool right_on;         // turns on/off right wheel
 
-    public KeyboardInput inputManager;
+    public InputManager inputManager;
 
     private float left_w;          // FRONT left wheel's angular velocity
     private float right_w;         // FRONT right wheel's angular velocity

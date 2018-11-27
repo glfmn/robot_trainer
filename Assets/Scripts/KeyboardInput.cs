@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyboardInput : MonoBehaviour, IInputManager {
+public class KeyboardInput : InputManager {
 
-  // Use this for initialization
-  void Start () {
+    // Use this for initialization
+    void Start () {
 
-  }
+    }
 
-  // Update is called once per frame
-  void Update () {
+    // Update is called once per frame
+    void Update () {
 
-  }
+    }
 
-    public Vector2 MoveAction()
+    public override Vector2 MoveAction()
     {
 
         float x = 0;

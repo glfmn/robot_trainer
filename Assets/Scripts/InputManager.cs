@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// extract method 
+// extract method
 
-public interface IInputManager
+public abstract class InputManager : MonoBehaviour
 {
 
-    Vector2 MoveAction(); 
+    public abstract Vector2 MoveAction();
 
 }
