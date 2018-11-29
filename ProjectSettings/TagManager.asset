@@ -7,6 +7,10 @@ TagManager:
   - Obstacle
   - ShowOnDeath
   - Spawn
+  - Spawn32
+  - Spawn10
+  - Spawn8
+  - Spawn40
   layers:
   - Default
   - TransparentFX

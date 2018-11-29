@@ -571,14 +571,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1b48e5995594429b28b85d06de1915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left_front_on: 1
-  right_front_on: 1
+  left_on: 0
+  right_on: 0
+  inputManager: {fileID: 0}
+  max_w: 0
+  acceleration: 0
+  turn_amplification: 0
   sensor_on: 0
   sensor_detect: 0
-  left_front_w: 10
-  right_front_w: 10
   radius: 1
   terrain_alpha: 100
+  gameOverPanel: {fileID: 0}
 --- !u!212 &212132294526506786
 SpriteRenderer:
   m_ObjectHideFlags: 1
