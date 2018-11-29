@@ -44,7 +44,7 @@ public class Belt : PuzzleElement {
 
     public override float AngularVelocity () {
         angularVelocity = driver.Size() / driven.Size() * driver.AngularVelocity() * -1;
-        Debug.Log("Belt angular velocity " + angularVelocity);
+        //Debug.Log("Belt angular velocity " + angularVelocity);
         return angularVelocity;
     }
 
