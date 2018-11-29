@@ -29,6 +29,10 @@ public class Countdown : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey("escape")) {
+            SceneManager.LoadScene("scene0");
+        }
+
         /* restarts game after timeLeft seconds */
         if (TimerOn == true)
         {
