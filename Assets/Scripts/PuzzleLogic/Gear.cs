@@ -11,7 +11,7 @@ public class Gear : PuzzleElement {
     public PuzzleElement parent;
 
     void Start () {
-
+        Debug.Log("size: " + size);
     }
 
     void Update () {
@@ -24,7 +24,7 @@ public class Gear : PuzzleElement {
 
     public override float AngularVelocity () {
         angularVelocity = parent.Size() / size  * parent.AngularVelocity() * -1f;
-        //Debug.Log("Gear angular velocity " + angularVelocity);
+        Debug.Log("Gear angular velocity " + angularVelocity + ", size: " + size);
         return angularVelocity;
     }
 
