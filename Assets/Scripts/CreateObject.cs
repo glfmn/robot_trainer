@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Drag : MonoBehaviour {
+public class CreateObject : MonoBehaviour {
 
     public GameObject objectToInstantiate;
     private GameObject myCurrentObject; 
