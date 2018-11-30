@@ -11,6 +11,7 @@ TagManager:
   - Spawn10
   - Spawn8
   - Spawn40
+  - Gear
   layers:
   - Default
   - TransparentFX
