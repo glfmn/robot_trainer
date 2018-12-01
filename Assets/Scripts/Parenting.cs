@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Parenting : MonoBehaviour {
 
-    private GameObject child;
+    //private GameObject child;
     //private GameObject parent;
+    //private PuzzleElement child;
 
 	// Use this for initialization
 	void Start () {
@@ -19,10 +20,18 @@ public class Parenting : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag.Contains("Gear"))
+        if (other.gameObject.tag.Contains("Input"))
         {
             Debug.Log("setting parent!");
-            other.transform.parent = transform;
+           
+        }
+
+        else if (other.gameObject.tag.Contains("Gear"))
+        {
+            Debug.Log("gear parenting."); 
+            gameObject.transform.parent = other.transform; 
+            //gameObject.transform.parent = (other.gameObject.GetComponent<Gear>().parent).transform;
+            //other.gameObject.GetComponent<Gear>().parent = this.child; 
         }
 
         else

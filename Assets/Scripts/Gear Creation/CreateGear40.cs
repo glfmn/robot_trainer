@@ -29,8 +29,8 @@ public class CreateGear40 : MonoBehaviour
                 if (hit.collider.tag == "Spawn40")
                 {
                     myCurrentObject = Instantiate
-                                      (objectToInstantiate,
-                                       new Vector3(mousePos.x, mousePos.y + 20.0f, 0.0f), Quaternion.identity);
+                        (objectToInstantiate, new Vector3(mousePos.x, mousePos.y + 20f, 0.0f), Quaternion.identity);
+                    myCurrentObject.transform.SetParent(myCurrentObject.transform, false); 
 
                 }
             }
