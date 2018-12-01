@@ -24,6 +24,8 @@ public class Parenting : MonoBehaviour {
         {
             Debug.Log("setting parent!");
            
+
+
         }
 
         else if (other.gameObject.tag.Contains("Gear"))
@@ -31,7 +33,8 @@ public class Parenting : MonoBehaviour {
             Debug.Log("gear parenting."); 
             gameObject.transform.parent = other.transform; 
             //gameObject.transform.parent = (other.gameObject.GetComponent<Gear>().parent).transform;
-            //other.gameObject.GetComponent<Gear>().parent = this.child; 
+            this.gameObject.GetComponent<Gear>().parent = Resources.Load("PuzzleElements/Gear40") as PuzzleElement;
+
         }
 
         else
