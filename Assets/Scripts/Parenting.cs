@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Parenting : MonoBehaviour {
 
-    //private GameObject child;
+    private GameObject child;
     //private GameObject parent;
     //private PuzzleElement child;
+    
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+       
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -30,11 +32,15 @@ public class Parenting : MonoBehaviour {
 
         else if (other.gameObject.tag.Contains("Gear"))
         {
+            Gear gearScript = this.GetComponent<Gear>();
             Debug.Log("gear parenting."); 
-            gameObject.transform.parent = other.transform; 
-            //gameObject.transform.parent = (other.gameObject.GetComponent<Gear>().parent).transform;
-            this.gameObject.GetComponent<Gear>().parent = Resources.Load("PuzzleElements/Gear40") as PuzzleElement;
+            gameObject.transform.parent = other.transform;
+            //child = Instantiate(Resources.Load("Gear40")) as GameObject;
 
+
+            //gameObject.transform.parent = (other.gameObject.GetComponent<Gear>().parent).transform;
+
+            Debug.Log("pare happened.:"); 
         }
 
         else
