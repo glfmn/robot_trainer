@@ -22,8 +22,7 @@ public class OutputGear : MonoBehaviour, IPuzzleElement {
     }
 
     public float AngularVelocity () {
-        outputVelocity = output.Size() / size  * output.AngularVelocity() * -1f;
-        Debug.Log("This is output angular velocity: " + output.AngularVelocity()); 
+        outputVelocity = output.Size() / size  * output.AngularVelocity() * -1f; 
         return outputVelocity;
     }
 

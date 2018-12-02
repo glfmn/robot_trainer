@@ -25,22 +25,27 @@ public class Parenting : MonoBehaviour {
         if (other.gameObject.tag.Contains("Input"))
         {
             Debug.Log("setting parent!");
-           
-
-
         }
 
         else if (other.gameObject.tag.Contains("Gear"))
         {
-            Gear gearScript = this.GetComponent<Gear>();
-            Debug.Log("gear parenting."); 
+            Gear gearScript = this.GetComponent<Gear>(); 
+
+            // sets this object as the child of the thing it collides with
             gameObject.transform.parent = other.transform;
             //child = Instantiate(Resources.Load("Gear40")) as GameObject;
 
+            if (other.gameObject.name.Contains("Gear40"))
+            {
+                gearScript.parent = Resources.Load("PuzzleElements/Gear40") as PuzzleElement;
+                Debug.Log("setting gear 40"); 
+            }
 
+            else 
+            {
+                Debug.Log("didn't set gear 40."); 
+            }
             //gameObject.transform.parent = (other.gameObject.GetComponent<Gear>().parent).transform;
-
-            Debug.Log("pare happened.:"); 
         }
 
         else
