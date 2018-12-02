@@ -82,8 +82,10 @@ public class Player_Controller : MonoBehaviour
         Vector2 action = inputManager.MoveAction();
 
         // Accumulate the value from the input
-        left_w += action.x * acceleration;
-        right_w += action.y * acceleration;
+        //left_w += action.x * acceleration;
+        //right_w += action.y * acceleration;
+        left_w = action.x; 
+        right_w = action.y; 
 
         // Clamp the absolute value to the maximum angular velocity
         left_w = absolute_clamp(left_w, max_w);

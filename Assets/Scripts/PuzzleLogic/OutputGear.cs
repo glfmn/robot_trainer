@@ -7,7 +7,7 @@ public class OutputGear : MonoBehaviour, IPuzzleElement {
     public PuzzleElement output;
     public float size;
 
-    float outputVelocity;
+    public float outputVelocity;
 
     void Start () {
 
@@ -23,6 +23,7 @@ public class OutputGear : MonoBehaviour, IPuzzleElement {
 
     public float AngularVelocity () {
         outputVelocity = output.Size() / size  * output.AngularVelocity() * -1f;
+        Debug.Log("This is output angular velocity: " + output.AngularVelocity()); 
         return outputVelocity;
     }
 
