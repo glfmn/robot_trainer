@@ -494,7 +494,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0ad430d5fcc5a4f818d56b488da91bbf, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ab4cf7cd9194375a09b0f0872426e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: scene0
+  scene: scene1
 --- !u!1 &1960661875
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +844,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 7d4e7d6489dd62f4e8299683a37292cd, type: 2}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.989954
+      value: 0.901886
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 7d4e7d6489dd62f4e8299683a37292cd, type: 2}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -852,7 +852,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19900000, guid: 7d4e7d6489dd62f4e8299683a37292cd, type: 2}
       propertyPath: m_MaxParticleSize
-      value: 50
+      value: 50.57
       objectReference: {fileID: 0}
     - target: {fileID: 19900000, guid: 7d4e7d6489dd62f4e8299683a37292cd, type: 2}
       propertyPath: m_MinParticleSize
@@ -868,7 +868,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 7d4e7d6489dd62f4e8299683a37292cd, type: 2}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 2.56
+      value: 1.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 7d4e7d6489dd62f4e8299683a37292cd, type: 2}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 7d4e7d6489dd62f4e8299683a37292cd, type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.54
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d4e7d6489dd62f4e8299683a37292cd, type: 2}
