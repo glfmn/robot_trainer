@@ -12,6 +12,8 @@ TagManager:
   - Spawn8
   - Spawn40
   - Gear
+  - Input
+  - Win
   layers:
   - Default
   - TransparentFX
