@@ -26,7 +26,7 @@ public class Player_Controller : MonoBehaviour
     public float radius;                // wheel radius
     public float terrain_alpha;         // terrain physics
 
-    public GameObject gameOverPanel;    // shows a Game Over screen
+    //public GameObject gameOverPanel;    // shows a Game Over screen
 
     private float linear_velocity;      // stores a variable for linear velocity of the robot
 
@@ -41,7 +41,7 @@ public class Player_Controller : MonoBehaviour
         robot = GetComponent<Rigidbody2D>();
         death = GetComponent<AudioSource>();
         GetComponent<AudioSource>().playOnAwake = false;
-        gameOverPanel.SetActive(false);
+        //gameOverPanel.SetActive(false);
 
         if (turn_amplification == 0f) {
             turn_amplification = 1;
