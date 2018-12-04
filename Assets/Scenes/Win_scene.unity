@@ -864,11 +864,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 7d4e7d6489dd62f4e8299683a37292cd, type: 2}
       propertyPath: prewarm
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 7d4e7d6489dd62f4e8299683a37292cd, type: 2}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 1.34
+      value: 2.91
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 7d4e7d6489dd62f4e8299683a37292cd, type: 2}
       propertyPath: InitialModule.startSpeed.scalar
