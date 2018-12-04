@@ -21,8 +21,6 @@ public class WinCondition : MonoBehaviour {
         /* robot crosses finish line */
         if (other.collider.tag == "Win")
         {
-            Debug.Log("Winning!");
-
             /* shows win screen */
             SceneManager.LoadScene("Win_scene"); 
 

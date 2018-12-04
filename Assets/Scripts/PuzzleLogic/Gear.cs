@@ -12,10 +12,7 @@ public class Gear : PuzzleElement {
 
     void Start () {
        
-        Debug.Log("size: " + size);
-        //parent = Instantiate(Resources.Load("Gear40", typeof(GameObject))) as PuzzleElement;
-        //Debug.Log("parent:" + parent);
-        //Debug.Log("help."); 
+        Debug.Log("size: " + size);; 
     }
 
     void Update () {

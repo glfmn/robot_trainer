@@ -121,4 +121,24 @@ public class Player_Controller : MonoBehaviour
 
 
     }
+
+    /* when the robot hits anything, it dies */
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        /* robot hits obstacle */
+        if (other.collider.tag == "Obstacle")
+        {
+            Debug.Log("hit something");
+
+            /* shows game over screen */
+            SceneManager.LoadScene("Death");
+
+            /* plays the sound of robot death */
+            //death.Play();
+
+            ///* starts countdown timer */
+            //TimerOn = true;
+
+        }
+    }
 }

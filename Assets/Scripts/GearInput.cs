@@ -31,7 +31,7 @@ public class GearInput : InputManager {
         {
             y = (rightout.GetComponent<OutputGear>().outputVelocity)/20; 
         }
-        Debug.Log("using wheels."); 
+      
         return new Vector2(x, y); 
     }
 }

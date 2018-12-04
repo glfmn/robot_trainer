@@ -19,19 +19,19 @@ public class KeyboardInput : InputManager {
 
         float x = 0;
         if (Input.GetKey("w")) {
-          x += 1;
+          x += 10;
         }
 
         if (Input.GetKey("s")) {
-          x -= 1;
+          x -= 10;
         }
 
         float y = 0;
         if (Input.GetKey("up")) {
-          y += 1;
+          y += 10;
         }
         if (Input.GetKey("down")) {
-          y -= 1;
+          y -= 10;
         }
 
         return new Vector2(x, y);

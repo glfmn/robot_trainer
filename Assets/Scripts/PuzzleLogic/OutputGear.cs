@@ -7,6 +7,7 @@ public class OutputGear : MonoBehaviour, IPuzzleElement {
     public PuzzleElement output;
     public float size;
 
+    // this determines how the gears rotate 
     public float outputVelocity;
 
     void Start () {
@@ -29,4 +30,5 @@ public class OutputGear : MonoBehaviour, IPuzzleElement {
     public float Size () {
         return 1f;
     }
+
 }

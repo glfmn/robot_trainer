@@ -19,28 +19,13 @@ public class Parenting : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        if (!this.enabled) return; 
         Gear gearScript = this.GetComponent<Gear>();
         OutputGear OutputgearScript = this.GetComponent<OutputGear>();
-
-        //if (other.gameObject.tag.Contains("Input"))
-        //{
-
-        //    //gearScript.parent = other.gameObject.GetComponent<PuzzleElement>(); 
-        //}
-
-        //else if (other.gameObject.tag.Contains("Gear"))
-        //{
-        //    // sets this object as the child of the thing it collides with
-
-        //        //gearScript.parent = Resources.Load("PuzzleElements/Gear40") as PuzzleElement;
-
-        //}
-
 
         // if an output gear, set this object as the child of the collided thingy
         if (gameObject.name.Contains("Output"))
         {
-            Debug.Log("ouput parenting.");
             if (gameObject.transform.position.x > other.gameObject.transform.position.x)
             {
                 OutputgearScript.output = other.gameObject.GetComponent<PuzzleElement>();
@@ -54,7 +39,6 @@ public class Parenting : MonoBehaviour {
 
             if (gameObject.transform.position.x > other.gameObject.transform.position.x)
             {
-                Debug.Log("using location.:");
                 //gameObject.transform.parent = other.transform;
                 gearScript.parent = other.gameObject.GetComponent<PuzzleElement>();
             }

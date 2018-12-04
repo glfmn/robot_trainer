@@ -21,9 +21,8 @@ public class Countdown : MonoBehaviour
     {
         death = GetComponent<AudioSource>();
         GetComponent<AudioSource>().playOnAwake = false;
-        gameOverPanel.SetActive(false);
-
-        TimerOn = false;
+        gameOverPanel.SetActive(true);
+        TimerOn = true;
 
     }
 
@@ -44,26 +43,6 @@ public class Countdown : MonoBehaviour
                 TimerOn = false;
                 SceneManager.LoadScene("scene0");
             }
-        }
-    }
-
-    /* when the robot hits anything, it dies */
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        /* robot hits obstacle */
-        if (other.collider.tag == "Obstacle")
-        {
-            Debug.Log("hit something");
-
-            /* shows game over screen */
-            gameOverPanel.SetActive(true);
-
-            /* plays the sound of robot death */
-            death.Play();
-
-            /* starts countdown timer */
-            TimerOn = true;
-
         }
     }
 }
