@@ -23,8 +23,11 @@ public class Draggable : MonoBehaviour
     {
         Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
 
-        Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint)+offset;
-        transform.position = curPosition;
+        Vector3 currentPos = Camera.main.ScreenToWorldPoint(curScreenPoint)+offset;
+        //transform.position = curPosition;
+        transform.position = new Vector3(Mathf.Round(currentPos.x),
+                             Mathf.Round(currentPos.y),
+                             Mathf.Round(currentPos.z));
 
     }
 
