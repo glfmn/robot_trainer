@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 58399721857404052}
   - component: {fileID: 212433264711627868}
   - component: {fileID: 114184548570125628}
+  - component: {fileID: 114581476973188036}
   m_Layer: 0
   m_Name: Output
   m_TagString: Gear
@@ -38,8 +39,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1812281189647762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -82.3, y: 11, z: -0.27828813}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -7, y: -14, z: 0.69655836}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,9 +77,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.022212982, y: 0.033317566}
   serializedVersion: 2
-  m_Radius: 1.52
+  m_Radius: 1.6421623
 --- !u!114 &114184548570125628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,6 +105,18 @@ MonoBehaviour:
   output: {fileID: 0}
   size: 40
   outputVelocity: 0
+--- !u!114 &114581476973188036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812281189647762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5dd3f6474bf345ba9843c1a86d4c487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: {fileID: 0}
 --- !u!212 &212433264711627868
 SpriteRenderer:
   m_ObjectHideFlags: 1

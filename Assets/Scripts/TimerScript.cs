@@ -43,6 +43,22 @@ public class TimerScript : MonoBehaviour {
             //right.GetComponent<Parenting>().enabled = true;
         }
 
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            left.GetComponent<OutputGear>().enabled = false;
+            right.GetComponent<OutputGear>().enabled = false;
+            linput.GetComponent<InputGear>().enabled = false;
+            rinput.GetComponent<InputGear>().enabled = false;
+            Debug.Log("pushing x"); 
+            //left.GetComponent<OutputGear>().enabled = true;
+            //right.GetComponent<OutputGear>().enabled = true;
+            //linput.GetComponent<InputGear>().enabled = true;
+            //rinput.GetComponent<InputGear>().enabled = true;
+            puzzlelogic.SetActive(false);
+            left.GetComponent<OutputGear>().outputVelocity = 0;
+            right.GetComponent<OutputGear>().outputVelocity = 0; 
+        }
+
     }
 
     //IEnumerator Activation(int num)

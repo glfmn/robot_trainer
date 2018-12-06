@@ -29,7 +29,7 @@ public class CreateGear10 : MonoBehaviour {
                 {
                     myCurrentObject = Instantiate
                                       (objectToInstantiate,
-                                       new Vector3(mousePos.x, mousePos.y + 15.0f, 0.0f), Quaternion.identity);
+                                       new Vector3(mousePos.x, mousePos.y + 20.0f, 0.0f), Quaternion.identity);
                 }
             }
 

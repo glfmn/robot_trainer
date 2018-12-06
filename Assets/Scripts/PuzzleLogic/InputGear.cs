@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class InputGear : PuzzleElement {
     // size of gear
     public float size;
-    public TextMesh velocity;
+    //public TextMesh velocity;
     public float input;
 
     // number of times user rotates input gear 
@@ -22,7 +22,7 @@ public class InputGear : PuzzleElement {
 
     void FixedUpdate()
     {
-        velocity.text = ("" + input); 
+        //velocity.text = ("" + input); 
         transform.Rotate(0, 0, input * Time.fixedDeltaTime);
 
     }
