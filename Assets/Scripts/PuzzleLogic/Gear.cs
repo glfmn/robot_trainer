@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Gear : PuzzleElement {
     public float size;
 
     float angularVelocity;
+
 
     /// The gear or assembly that drives the parent gear
     public PuzzleElement parent;
@@ -20,6 +23,7 @@ public class Gear : PuzzleElement {
     }
 
     void FixedUpdate () {
+        //velocity.text = ("" + angularVelocity); 
         transform.Rotate(0, 0, angularVelocity * Time.fixedDeltaTime);
     }
 

@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 212433264711627868}
   - component: {fileID: 114389741101282448}
   - component: {fileID: 114527380879080540}
+  - component: {fileID: 114394790112082326}
+  - component: {fileID: 114965137435297704}
   m_Layer: 0
   m_Name: Gear32
   m_TagString: Gear
@@ -77,9 +79,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0102559095, y: 0.0018083943}
   serializedVersion: 2
-  m_Radius: 1.7
+  m_Radius: 1.8222429
 --- !u!114 &114356351356249062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,7 +106,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a3ddcd1ff8042ea993b0eeaeb3aa94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114394790112082326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812281189647762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367818c3623824e1aa3d8e6bfdfd8de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114527380879080540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812281189647762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367818c3623824e1aa3d8e6bfdfd8de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114965137435297704
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
