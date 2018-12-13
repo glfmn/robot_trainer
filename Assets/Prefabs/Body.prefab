@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 114751991516059516}
   - component: {fileID: 68462122396989346}
   - component: {fileID: 82922510570627300}
+  - component: {fileID: 114048781828273240}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -292,7 +293,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2f512a0fe2092445ab09284164938062, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9b5a102976ace4a00ba4b91d10ddf557, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -450,6 +451,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114048781828273240
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1907432031240518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923eebb7ddd884b6c9066066da2086f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdown: {fileID: 0}
+  TimerOn: 0
+  gameOverPanel: {fileID: 0}
 --- !u!114 &114751991516059516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -463,8 +478,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left_on: 1
   right_on: 1
-  left_w: 1
-  right_w: 1
+  inputManager: {fileID: 0}
+  max_w: 15
+  acceleration: 0.25
+  turn_amplification: 1.1
   sensor_on: 0
   sensor_detect: 0
   radius: 1
@@ -688,7 +705,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b2a1d3ad30bc1634eacb00dfb16af39f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
